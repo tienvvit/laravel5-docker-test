@@ -8,6 +8,7 @@ RUN apt-get update \
     && chmod 0777 "/var/www/laravel" \
     && touch /init-start.sh && rm -f /init-start.sh \
     && phpdismod xdebug
+    && chsh -s /bin/bash jenkins
 
 ADD config/nginx.conf /etc/nginx/nginx.conf
 ADD config/laravel.conf /etc/nginx/sites-available/laravel.conf
